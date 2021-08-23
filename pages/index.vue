@@ -1,8 +1,12 @@
 <template>
   <div v-bind:class="{'dark-mode': isDarkMode}">
+
     <Header @clicked="setDark" />
-    <div style="height: 1200px;"></div>
+
+    <SlideTop />
+
     <NavigationMain />
+
   </div>
 </template>
 
@@ -12,6 +16,14 @@ export default {
   data: () => ({
     isDarkMode: false,
   }),
+
+  head() {
+    return {
+      bodyAttrs: {
+        class: this.isDarkMode ? 'dark-mode' : ''
+      }
+    }
+  },
 
   watch: {
     // isDrawer: ()=> {

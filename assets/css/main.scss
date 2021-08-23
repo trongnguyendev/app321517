@@ -22,6 +22,7 @@
     --color-gradient-whatsapp: #34af23;
     --color-gradient-email: #3498db;
     --color-icon: #fff;
+    --color-fix: #fff;
 
   }
   
@@ -43,8 +44,12 @@
 * {
     transition: 0.2s;
 }
+body {
+    background: var(--bg);
+}
 
 header.v-app-bar {
+    box-shadow: none !important;
     transition: 0.2s;
     height: auto !important;
     padding: 14px 0;
@@ -118,13 +123,13 @@ header.v-app-bar--is-scrolled {
             font-size: 11px;
             display: block;
             color: var(--color);
+            opacity: .7;
         }
         .icon-footer-bar {
             font-size: 18px;
         }
     }
     .btn-home {
-        // margin-top: -20px;
         .icon-footer-bar {
             background: var(--bg-third);
             padding: 15px 15px;
@@ -132,6 +137,7 @@ header.v-app-bar--is-scrolled {
             margin-top: -33px;
             position: relative;
             top: -6px;
+            opacity: 1;
         }
     }
 }
@@ -281,5 +287,70 @@ header.v-app-bar--is-scrolled {
         display: block;
         cursor: pointer;
         z-index: 1;
+    }
+}
+section {
+    padding: 0 16px;
+}
+.slideTop {
+    margin-top: 84px;
+    .VueCarousel {
+        .VueCarousel-wrapper {
+            border-radius: 20px;
+        }
+        .slide-item {
+            background-size: cover;
+            min-height: 300px;
+            position: relative;
+            .textSlide {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                .panel-blur {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: #000;
+                    opacity: .6;
+                }
+                .text-bottom {
+                    z-index: 1;
+                    position: absolute;
+                    bottom: 1.5rem;
+                    left: 1rem;
+                    h3 {
+                        color: var(--color-fix);
+                    }
+                    p {
+                        color: var(--color-fix);
+                        opacity: .6;
+                        font-size: 14px;
+                    }
+                }
+                .icon-top {
+                    z-index: 1;
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    span {
+                        background: var(--color-fix);
+                        font-size: 13px;
+                        border-radius: 100%;
+                        text-align: center;
+                        width: 35px;
+                        height: 35px;
+                        display: inline-block;
+                        padding: 10px 0px;
+                        &:last-child {
+                            color: #da4453;
+                            margin-left: 5px;
+                        }
+                        &:first-child {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
