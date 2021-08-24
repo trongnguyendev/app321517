@@ -1,12 +1,15 @@
 <template>
   <div v-bind:class="{'dark-mode': isDarkMode}">
-
     <Header @clicked="setDark" />
 
-    <SlideTop />
+    <main>
+      <SlideTop />
+      <FeatureProduct />
+      <PopularCategories />
+      <NewStore />
+    </main>
 
     <NavigationMain />
-
   </div>
 </template>
 
@@ -26,9 +29,6 @@ export default {
   },
 
   watch: {
-    // isDrawer: ()=> {
-    //   // console.log("changed");
-    // }
   },
 
   methods: {

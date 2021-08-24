@@ -6,6 +6,7 @@
       temporary
       width="280"
       @transitionend="endTransitionDrawer"
+      class="navigation-menu"
     >
       <v-card
       height="150">

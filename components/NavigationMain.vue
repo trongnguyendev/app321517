@@ -6,6 +6,7 @@
       scroll-target="#hide-on-scroll-example"
       grow
       class="footerbar"
+      
     >
 
     <v-spacer></v-spacer>
