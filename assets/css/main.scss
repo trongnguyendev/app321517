@@ -53,11 +53,11 @@ body {
     letter-spacing: initial;
 }
 main {
-    margin: 84px 0;
+    margin: 84px 0 100px 0;
 }
 section {
     padding: 0 16px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 .v-overlay--absolute {
     position: fixed !important;
@@ -135,6 +135,79 @@ header.v-app-bar--is-scrolled {
 .v-item-group.v-bottom-navigation .v-btn.v-btn--active {
     border-bottom: 5px solid var(--bg-third);
 }
+.ic-list-item {
+    color: var(--color-icon);
+    padding: 8px 8px;
+    height: 29px;
+    width: 29px;
+    display: inline-block;
+    margin-right: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+.gradient-welcome {
+    background-image: var(--color-gradient-welcome);
+}
+.gradient-homepages {
+    background-image: var(--color-gradient-homepages);
+}
+.gradient-components {
+    background-image: var(--color-gradient-components);
+}
+.gradient-pages {
+    background-image: var(--color-gradient-pages);
+}
+.gradient-media {
+    background-image: var(--color-gradient-media);
+}
+.gradient-contact {
+    background-image: var(--color-gradient-contact);
+}
+.gradient-highlights {
+    background-image: var(--color-gradient-highlight);
+}
+.gradient-darkmode {
+    background-image: var(--color-gradient-darkmode);
+}
+.gradient-facebook {
+    background-color: var(--color-gradient-facebook);
+}
+.gradient-twitter {
+    background-color: var(--color-gradient-twitter);
+}
+.gradient-linkedin {
+    background-color: var(--color-gradient-linkedin);
+}
+.gradient-whatsapp {
+    background-color: var(--color-gradient-whatsapp);
+}
+.gradient-email {
+    background-color: var(--color-gradient-email);
+}
+.icon-top {
+    z-index: 1;
+    position: absolute;
+    top: .7rem;
+    right: .7rem;
+    span {
+        cursor: pointer;
+        background: var(--color-white-fix);
+        font-size: 13px;
+        border-radius: 100%;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        padding: 6px 0px;
+        &:last-child {
+            color: #da4453;
+            margin-left: 5px;
+        }
+        &:first-child {
+            color: black;
+        }
+    }
+}
 .footerbar {
     border-top: solid 1px rgba(255,255,255,.05);
     background-color: var(--bg) !important;
@@ -168,55 +241,6 @@ header.v-app-bar--is-scrolled {
 .v-navigation-drawer{
     background-color: var(--bg) !important;
     position: fixed !important;
-    .ic-list-item {
-        color: var(--color-icon);
-        padding: 8px 8px;
-        height: 29px;
-        width: 29px;
-        display: inline-block;
-        margin-right: 15px;
-        border-radius: 8px;
-        text-align: center;
-    }
-    .gradient-welcome {
-        background-image: var(--color-gradient-welcome);
-    }
-    .gradient-homepages {
-        background-image: var(--color-gradient-homepages);
-    }
-    .gradient-components {
-        background-image: var(--color-gradient-components);
-    }
-    .gradient-pages {
-        background-image: var(--color-gradient-pages);
-    }
-    .gradient-media {
-        background-image: var(--color-gradient-media);
-    }
-    .gradient-contact {
-        background-image: var(--color-gradient-contact);
-    }
-    .gradient-highlights {
-        background-image: var(--color-gradient-highlight);
-    }
-    .gradient-darkmode {
-        background-image: var(--color-gradient-darkmode);
-    }
-    .gradient-facebook {
-        background-color: var(--color-gradient-facebook);
-    }
-    .gradient-twitter {
-        background-color: var(--color-gradient-twitter);
-    }
-    .gradient-linkedin {
-        background-color: var(--color-gradient-linkedin);
-    }
-    .gradient-whatsapp {
-        background-color: var(--color-gradient-whatsapp);
-    }
-    .gradient-email {
-        background-color: var(--color-gradient-email);
-    }
     .text-list-item {
         color: var(--color);
     }
@@ -329,29 +353,6 @@ header.v-app-bar--is-scrolled {
                         font-size: 14px;
                     }
                 }
-                .icon-top {
-                    z-index: 1;
-                    position: absolute;
-                    top: 1rem;
-                    right: 1rem;
-                    span {
-                        background: var(--color-white-fix);
-                        font-size: 13px;
-                        border-radius: 100%;
-                        text-align: center;
-                        width: 35px;
-                        height: 35px;
-                        display: inline-block;
-                        padding: 10px 0px;
-                        &:last-child {
-                            color: #da4453;
-                            margin-left: 5px;
-                        }
-                        &:first-child {
-                            color: black;
-                        }
-                    }
-                }
             }
         }
     }
@@ -455,7 +456,7 @@ header.v-app-bar--is-scrolled {
     
 }
 
-.popular-categories {
+.popular-categories, .product-categories {
     .VueCarousel {
         margin: 0 -16px;
     }
@@ -465,7 +466,7 @@ header.v-app-bar--is-scrolled {
         border-radius: 10px;
         position: relative;
         overflow: hidden;
-        margin: 0 15px 6px;
+        margin: 0 16px 6px;
         .gradient-card {
             // opacity: .8;
         }
@@ -482,5 +483,85 @@ header.v-app-bar--is-scrolled {
         color: var(--color);
         font-size: 1.25rem;
         margin-bottom: 18px;
+    }
+}
+
+.product-categories {
+    .slide-item {
+        height: 210px;
+        background-position: center;
+        .slide-content {
+            margin: 0;
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1rem;
+            del {
+                display: block;
+                font-size: 9px;
+                opacity: .4;
+                sup {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+    .slide-more {
+        padding: 0 16px;
+        > span {
+            color: var(--color-highlight);
+            font-size: 9px;
+        }
+        h4 {
+            color: var(--color);
+            font-size: 18px;
+        }
+    }
+    .slide-categories {
+        margin: 0 0 20px 0;
+        .slide-category-item {
+            font-size: 15px;
+            opacity: .5;
+            font-weight: bold;
+            color: var(--color);
+            cursor: pointer;
+        }
+        .categories-ative {
+            opacity: 1;
+        }
+    }
+}
+
+footer {
+    background: var(--bg-secondary);
+    padding: 20px 14px;
+    > h2 {
+        text-align: center;
+        color: var(--color);
+        font-size: 28px;
+    }
+    > p {
+        text-align: center;
+        color: var(--color);
+        font-size: 11px;
+        margin: 17px 0;
+        opacity: .7;
+    }
+    .footer-social {
+        text-align: center;
+        .ic-list-item {
+            margin-right: 5px !important;
+        }
+    }
+    .more-info {
+        display: flex;
+        // justify-content: space-between;
+        border-top: solid 1px rgba(255, 255, 255, 0.05);
+        padding: 23px 10px 7px 10px;
+        margin-top: 17px;
+        a{
+            text-decoration: none;
+            color: var(--bg-third);
+            font-size: 9px;
+        }
     }
 }

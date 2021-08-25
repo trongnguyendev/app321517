@@ -167,7 +167,7 @@
     },
 
     data: () => ({
-      switchDark: false,
+      switchDark: true,
       imgHeaderNavigation: require('@/assets/images/6.jpg')
     }),
 
