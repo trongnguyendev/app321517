@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="{ 'dark-mode': isDarkMode }">
+  <div>
     <v-app-bar
       color="accent-4"
       dark
@@ -22,7 +22,7 @@
       <v-btn 
       class="btn-header btn-mode" 
       @click="setMode"
-      v-if="!isDarkMode"
+      v-if="!isDark"
       >
         <font-awesome-icon class="ic-light" :icon="['fas', 'lightbulb']"/>
         <font-awesome-icon class="ic-sun" :icon="['fas', 'sun']"/>
@@ -31,7 +31,7 @@
       <v-btn 
       class="btn-header btn-mode" 
       @click="setMode"
-      v-if="isDarkMode"
+      v-if="isDark"
       >
         <font-awesome-icon :icon="['fas', 'moon']"/>
       </v-btn>
@@ -56,37 +56,52 @@
 </template>
 
 <script>
-  export default {
 
-    data: () => ({
-      isDarkMode: false,
-      drawer: false,
-      drawerShare: false,
-      group: null,
-    }),
+import { mapActions, mapGetters } from 'vuex'
+export default {
 
-    watch: {
+  data: () => ({
+    drawer: false,
+    drawerShare: false,
+    group: null,
+  }),
 
+  watch: {
+
+  },
+
+  computed: {
+    ...mapGetters([
+      'isDark',
+      'isMenuOpen'
+    ])
+  },
+
+  created() {
+  },
+
+  methods: {
+    ...mapActions([
+      'updateMode',
+      'toggleMenu'
+    ]),
+
+    setMode () {
+      this.updateMode()
     },
-
-
-    methods: {
-      setMode (event) {
-        this.isDarkMode = !this.isDarkMode
-        this.$emit('clicked', this.isDarkMode)
-      },
-      setDrawer() {
-        this.drawer = !this.drawer
-      },
-      actionChange(value) {
-        this.drawer = value
-      },
-      setDrawerShare() {
-        this.drawerShare = !this.drawerShare
-      },
-      actionChangeShare(value) {
-        this.drawerShare = value
-      }
+    setDrawer() {
+      this.drawer = !this.drawer
+    },
+    actionChange(value) {
+      this.drawer = value
+    },
+    setDrawerShare() {
+      this.drawerShare = !this.drawerShare
+    },
+    actionChangeShare(value) {
+      this.drawerShare = value
     }
   }
+}
+
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <v-app v-bind:class="{'dark-mode': isDarkMode}">
-    <Header @clicked="setDark" />
+  <v-app v-bind:class="{ 'dark-mode': isDark }">
+    <Header />
 
     <v-main>
       <Nuxt />
@@ -11,24 +11,31 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
 
   data: () => ({
-    isDarkMode: false,
   }),
 
-  head() {
-    return {
-      bodyAttrs: {
-        class: this.isDarkMode ? 'dark-mode' : ''
-      }
-    }
+  // head() {
+  //   return {
+  //     bodyAttrs: {
+  //       class: this.isDarkMode ? 'dark-mode' : ''
+  //     }
+  //   }
+  // },
+
+  computed: {
+    ...mapGetters([
+      'isDark',
+      'isMenuOpen'
+    ])
+  },
+
+  watch: {
   },
 
   methods: {
-    setDark(value) {
-      this.isDarkMode = value
-    }
 	}
 }
 </script>

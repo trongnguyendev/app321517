@@ -3,7 +3,7 @@
       fixed
       hide-on-scroll
       horizontal
-      scroll-target="#hide-on-scroll-example"
+      scroll-target=""
       grow
       class="footerbar"
       
