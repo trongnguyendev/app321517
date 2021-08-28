@@ -1,20 +1,20 @@
 <template>
     <v-navigation-drawer
-      v-model="drawerShare"
+      v-model="drawerShare1"
       absolute
       bottom
       temporary
       mobile-breakpoint="19200"
       height="305"
       class="navigation-share"
-      @transitionend="endTransitionDrawerShare"
+      @input="endTransitionDrawerShare"
     >
       <v-card
       class="panel-head-share"
       height="70">
         <v-card-title>Share</v-card-title>
         <v-card-text>Tab a link to</v-card-text>
-        <span class="ic-close-share-navigation" @click.stop="drawerShare = !drawerShare">
+        <span class="ic-close-share-navigation" @click.stop="closeNavigationShare">
           <font-awesome-icon color="#dc3545" :icon="['fas', 'times-circle']"/>
         </span>
       </v-card>
@@ -92,24 +92,25 @@
     },
 
     data: () => ({
+      drawerShare1: false,
       switchDark: false,
       imgHeaderNavigation: require('@/assets/images/6.jpg')
     }),
 
     watch: {
       drawerShare () {
-        console.log("change")
+        this.drawerShare1 = this.drawerShare
       }
     },
 
     methods: {
-      endTransitionDrawerShare () {
-        if(!this.drawerShare) {
-          this.$emit('changeDrawerShare', this.drawerShare)
+      endTransitionDrawerShare (isOpen) {
+        if(!isOpen) {
+          this.$emit('changeDrawerShare')
         }
       },
       closeNavigationShare() {
-        console.log("close")
+        this.$emit('changeDrawerShare')
       }
     }
    

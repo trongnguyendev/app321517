@@ -1,11 +1,13 @@
 <template>
     <v-navigation-drawer
       v-model="drawer"
-      absolute
+      fixed
       left
+      value="test"
       temporary
+      overlay-color="#00000078"
       width="280"
-      @transitionend="endTransitionDrawer"
+      @input="onInput"
       class="navigation-menu"
     >
       <v-card
@@ -160,27 +162,29 @@
 <script>
   export default {
     props: {
-      drawer: {
+      isMenuOpenProp: {
         type: Boolean,
         default: false
       }
     },
 
     data: () => ({
+      drawer: false,
       switchDark: true,
       imgHeaderNavigation: require('@/assets/images/6.jpg')
     }),
 
     watch: {
-      drawer () {
-        console.log("change")
+      isMenuOpenProp() {
+        this.drawer = this.isMenuOpenProp
       }
     },
 
     methods: {
-      endTransitionDrawer () {
-        if(!this.drawer) {
-          this.$emit('changeDrawer', this.drawer)
+      onInput(isOpen) {
+        if(!isOpen)
+        {
+          this.$emit('changeDrawer', isOpen)
         }
       }
     }

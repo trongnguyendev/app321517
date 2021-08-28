@@ -6,7 +6,11 @@ export default {
         commit(types.TOGGLE_MODE)
     },
 
-    toggleMenu({ commit }) {
-        commit(types.TOGGLE_MENU_SIDEBAR)
+    toggleSidebar({ commit }, data=false) {
+        commit(types.TOGGLE_MENU_SIDEBAR, data)
+    },
+
+    toggleMenuShare({ commit }) {
+        commit(types.TOGGLE_MENU_SHARE)
     }
 }

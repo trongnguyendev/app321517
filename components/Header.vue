@@ -38,7 +38,7 @@
 
       <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon> -->
       <v-btn 
-      @click="setDrawer"
+      @click="openSidebar"
       class="btn-header"
       >
         <font-awesome-icon :icon="['fas', 'bars']"/>
@@ -46,9 +46,9 @@
       
     </v-app-bar>
 
-    <NavigationDrawer :drawer="drawer" @changeDrawer="actionChange" />
+    <NavigationDrawer :isMenuOpenProp="isSidebarOpen" @changeDrawer="actionChange" />
 
-    <NavigationShare :drawerShare="drawerShare" @changeDrawerShare="actionChangeShare" />
+    <NavigationShare :drawerShare="isMenuShareOpen" @changeDrawerShare="actionChangeShare" />
     
   </div>
 
@@ -56,14 +56,11 @@
 </template>
 
 <script>
-
 import { mapActions, mapGetters } from 'vuex'
 export default {
 
   data: () => ({
-    drawer: false,
-    drawerShare: false,
-    group: null,
+    // drawerShare: false,
   }),
 
   watch: {
@@ -73,7 +70,8 @@ export default {
   computed: {
     ...mapGetters([
       'isDark',
-      'isMenuOpen'
+      'isSidebarOpen',
+      'isMenuShareOpen'
     ])
   },
 
@@ -83,23 +81,24 @@ export default {
   methods: {
     ...mapActions([
       'updateMode',
-      'toggleMenu'
+      'toggleSidebar',
+      'toggleMenuShare'
     ]),
-
     setMode () {
       this.updateMode()
     },
-    setDrawer() {
-      this.drawer = !this.drawer
+    openSidebar() {
+      this.toggleSidebar(true)
     },
     actionChange(value) {
-      this.drawer = value
+      this.toggleSidebar(value)
     },
     setDrawerShare() {
-      this.drawerShare = !this.drawerShare
+      this.toggleMenuShare()
     },
-    actionChangeShare(value) {
-      this.drawerShare = value
+    actionChangeShare() {
+      this.toggleMenuShare()
+      // this.drawerShare = value
     }
   }
 }

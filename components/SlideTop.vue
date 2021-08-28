@@ -7,6 +7,8 @@
             :autoplayTimeout="3000"
             autoplayHoverPause
             :paginationEnabled="false"
+            value="2"
+            loop="true"
             >
                 <slide 
                 v-for="(slide, index) in slidesTop" :key="index"

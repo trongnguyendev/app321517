@@ -6,7 +6,11 @@ export default {
         state.isDark = !state.isDark
     },
 
-    [types.TOGGLE_MENU_SIDEBAR](state) {
-        state.isMenuOpen = !state.isMenuOpen
+    [types.TOGGLE_MENU_SIDEBAR](state, data=false) {
+        state.isSidebarOpen = data
+    },
+
+    [types.TOGGLE_MENU_SHARE](state) {
+        state.isMenuShareOpen = !state.isMenuShareOpen
     }
 }

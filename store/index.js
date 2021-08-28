@@ -6,7 +6,8 @@ import actions from './actions'
 
 const state = {
     isDark: false,
-    isMenuOpen: false,
+    isSidebarOpen: false,
+    isMenuShareOpen: false
 }
 
 const createStore = () => {

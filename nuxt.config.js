@@ -26,8 +26,10 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // https://vue-cool-lightbox.lucaspulliese.com/#items-attributes
   plugins: [
-    { src: '~/plugins/vuecarousel.js', mode: 'client' }
+    { src: '~/plugins/vuecarousel.js', mode: 'client' },
+    { src: '~/plugins/vue-cool-light-box.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

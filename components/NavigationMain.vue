@@ -3,12 +3,10 @@
       fixed
       hide-on-scroll
       horizontal
-      scroll-target=""
       grow
       class="footerbar"
       
     >
-
     <v-spacer></v-spacer>
 
     <v-btn href="">
@@ -47,7 +45,7 @@
 
     <v-spacer></v-spacer>
 
-    <v-btn href="">
+    <v-btn @click="toggleMenuSidebar">
         <span class="icon-footer-bar">
             <font-awesome-icon :icon="['fas', 'bars']"/>
         </span>
@@ -59,3 +57,20 @@
       
     </v-bottom-navigation>
 </template>
+
+<script>
+import { mapActions, mapGetters } from 'vuex'
+export default {
+    data: () => ({
+    }),
+
+    methods: {
+        ...mapActions([
+            'toggleSidebar'
+        ]),
+        toggleMenuSidebar() {
+            this.toggleSidebar(true)
+        }
+    }
+}
+</script>
