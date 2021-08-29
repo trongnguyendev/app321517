@@ -4,7 +4,7 @@
             <v-card-subtitle>Handpicked by our Staff</v-card-subtitle>
             <v-card-title>Featured Products</v-card-title>
             <v-list class="feature-list">
-                <v-list-item href="/product" class="feature-item" v-for="(item, index) in 4" :key="index">
+                <v-list-item to="/product" class="feature-item" v-for="(item, index) in 4" :key="index">
                     <v-list-item-content class="md6">
                         <div class="feature-item-img">
                             <img src="@/assets/images/banner2_slidetop.jpg" alt="">

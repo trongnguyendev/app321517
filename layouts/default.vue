@@ -17,14 +17,6 @@ export default {
   data: () => ({
   }),
 
-  // head() {
-  //   return {
-  //     bodyAttrs: {
-  //       class: this.isDarkMode ? 'dark-mode' : ''
-  //     }
-  //   }
-  // },
-
   computed: {
     ...mapGetters([
       'isDark',

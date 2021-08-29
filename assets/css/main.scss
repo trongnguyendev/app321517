@@ -98,6 +98,8 @@ header.v-app-bar {
     }
     .logo {
         color: var(--color);
+        text-decoration: none;
+        font-size: 28px;
     }
 }
 .gradient-card {
@@ -614,9 +616,6 @@ footer {
     .cool-lightbox-thumbs__list {
         margin-top: 56px;
     }
-}
-.main-product {
-    // background: var(--bg-secondary);
 }
 .width-100 {
     width: 100%;

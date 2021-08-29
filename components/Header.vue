@@ -12,7 +12,8 @@
 
       <v-spacer class="spacer-header"></v-spacer>
 
-      <h1 class="logo">Store</h1>
+      <!-- <a class="logo" href="/">Store</a> -->
+      <nuxt-link to="/" class="logo">Store</nuxt-link>
 
       <v-spacer></v-spacer>
 
@@ -37,7 +38,6 @@
         <font-awesome-icon :icon="['fas', 'moon']"/>
       </v-btn>
 
-      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon> -->
       <v-btn 
       @click="openSidebar"
       class="btn-header"

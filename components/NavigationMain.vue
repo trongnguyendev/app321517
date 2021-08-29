@@ -1,7 +1,6 @@
 <template>
     <v-bottom-navigation
       fixed
-      hide-on-scroll
       horizontal
       grow
       class="footerbar"
