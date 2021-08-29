@@ -1,7 +1,7 @@
 <template>
-    <section>
-        <div class="galleries-product">
-             <v-card-subtitle>View In Detail</v-card-subtitle>
+    <section class="zindex bg zindex2">
+        <div class="galleries-product bg">
+            <v-card-subtitle>View In Detail</v-card-subtitle>
             <v-card-title>Product Gallery</v-card-title>
             <v-card-text>Here are the best and most beautiful features our product has to offer. Just tap and move through the images.</v-card-text>
             <br>

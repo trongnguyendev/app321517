@@ -4,6 +4,7 @@
       color="accent-4"
       dark
       fixed
+      v-bind:class="{ 'product-page': isProductPage }"
     >
       <v-btn class="btn-back-left btn-header">
         <font-awesome-icon class="ic-light" :icon="['fas', 'chevron-left']"/>
@@ -61,6 +62,7 @@ export default {
 
   data: () => ({
     // drawerShare: false,
+    isProductPage: false
   }),
 
   watch: {
@@ -76,6 +78,10 @@ export default {
   },
 
   created() {
+    if(this.$nuxt.$route.name == 'product')
+    {
+      this.isProductPage = true
+    }
   },
 
   methods: {

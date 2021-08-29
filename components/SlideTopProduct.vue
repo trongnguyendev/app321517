@@ -1,31 +1,30 @@
 <template>
-    <section class="slideTop">
-        <client-only>
-            <carousel
-            :perPage="1"
-            autoplay
-            :autoplayTimeout="3000"
-            autoplayHoverPause
-            :paginationEnabled="false"
-            >
-                <slide 
-                v-for="(slide, index) in slidesTop" :key="index"
-                v-bind:style="{ backgroundImage: 'url(' + slide.img + ')' }"
-                class="slide-item">
-                    <div class="textSlide">
-                        <div class="panel-blur"></div>
-                        <div class="text-bottom">
-                            <h3>{{ slide.name }}</h3>
-                            <p>{{ slide.description }}</p>
+    <section>
+        <div class="slideTop slideTopProduct">
+            <client-only>
+                <carousel
+                :perPage="1"
+                autoplay
+                :autoplayTimeout="3000"
+                autoplayHoverPause
+                :paginationEnabled="false"
+                :loop="true"
+                >
+                    <slide 
+                    v-for="(slide, index) in slidesTop" :key="index"
+                    v-bind:style="{ backgroundImage: 'url(' + slide.img + ')' }"
+                    class="slide-item">
+                        <div class="textSlide">
+                            <div class="panel-blur"></div>
+                            <div class="text-bottom align-center w-100 ">
+                                <h3 class="text-center">{{ slide.name }}</h3>
+                                <p class="text-center">{{ slide.description }}</p>
+                            </div>
                         </div>
-                        <div class="icon-top">
-                            <span><font-awesome-icon :icon="['fas', 'shopping-bag']"/></span>
-                            <span><font-awesome-icon :icon="['fas', 'heart']"/></span>
-                        </div>
-                    </div>
-                </slide>
-            </carousel>
-        </client-only>
+                    </slide>
+                </carousel>
+            </client-only>
+        </div>
     </section>
 </template>
 
